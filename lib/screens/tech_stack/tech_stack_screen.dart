@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:me/screens/default_screen.dart';
+import 'package:me/screens/tech_stack/tech_stack_medium_view.dart';
 import 'package:me/screens/tech_stack/tech_stack_view.dart';
 
 class TechStackScreen extends StatelessWidget {
@@ -10,7 +11,12 @@ class TechStackScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultScreen(
       label: label,
-      child: const TechStackView(),
+      child: LayoutBuilder(builder: (context, constraints) {
+        if (constraints.maxWidth < 1740) {
+          return const TechStackMediumView();
+        }
+        return const TechStackView();
+      }),
     );
   }
 }

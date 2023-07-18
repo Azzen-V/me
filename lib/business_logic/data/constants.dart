@@ -25,4 +25,28 @@ class Constants {
     ["images/typescript.webp", "images/angular.png", "images/github.png"],
     ["images/firebase.png", "images/supabase.png", "images/figma.webp"],
   ];
+  static const List<List<String>> techStackMobile = [
+    ["Flutter"],
+    ["C#"],
+    ["Java"],
+    ["TypeScript"],
+    ["Angular"],
+    ["GitHub"],
+    ["Firebase"],
+    ["Supabase"],
+    ["Figma"],
+    ["Und alles Weitere kann ich lernen!"],
+  ];
+  static const List<List<String>> pathsMobile = [
+    ["images/flutter.png"],
+    ["images/csharp.png"],
+    ["images/java.png"],
+    ["images/typescript.webp"],
+    ["images/angular.png"],
+    ["images/github.png"],
+    ["images/firebase.png"],
+    ["images/supabase.png"],
+    ["images/figma.webp"],
+    [""],
+  ];
 }
