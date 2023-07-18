@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Separator extends StatelessWidget {
   final double size;
-  final bool vertical;
+  final bool? vertical;
   final double factor;
   const Separator._({
     Key? key,
@@ -14,10 +14,14 @@ class Separator extends StatelessWidget {
   const Separator.vertical({Key? key, double? size, double factor = 1}) : this._(key: key, size: (size ?? 15 * factor), vertical: true, factor: factor);
 
   const Separator.horizontal({Key? key, double? size, double factor = 1}) : this._(key: key, size: (size ?? 15 * factor), vertical: false, factor: factor);
+  const Separator.both({Key? key, double? size, double factor = 1}) : this._(key: key, size: (size ?? 15 * factor), vertical: null, factor: factor);
 
   @override
   Widget build(BuildContext context) {
-    if (vertical) {
+    if (vertical == null) {
+      return SizedBox(width: size, height: size);
+    }
+    if (vertical ?? false) {
       return SizedBox(height: size);
     }
 

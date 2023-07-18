@@ -11,29 +11,39 @@ class DefaultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: const Alignment(-0.3, -0.8),
-            stops: const [0.0, 0.8, 0.8, 1],
-            colors: [
-              Theme.of(context).colorScheme.inversePrimary,
-              Theme.of(context).colorScheme.inversePrimary,
-              Theme.of(context).colorScheme.background,
-              Theme.of(context).colorScheme.background,
-            ],
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        EdgeInsets padding;
+        if (constraints.maxWidth <= 500) {
+          padding = const EdgeInsets.symmetric(vertical: 30, horizontal: 30);
+        } else {
+          padding = const EdgeInsets.symmetric(vertical: 100, horizontal: 150);
+        }
+        return Scaffold(
+          body: Container(
+            constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: const Alignment(-0.3, -0.8),
+                stops: const [0.0, 0.8, 0.8, 1],
+                colors: [
+                  Theme.of(context).colorScheme.inversePrimary,
+                  Theme.of(context).colorScheme.inversePrimary,
+                  Theme.of(context).colorScheme.background,
+                  Theme.of(context).colorScheme.background,
+                ],
+              ),
+            ),
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: padding,
+                child: child,
+              ),
+            ),
           ),
-        ),
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 150),
-            child: child,
-          ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

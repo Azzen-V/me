@@ -7,7 +7,8 @@ import '../../widgets/random_color_text.dart';
 import '../../widgets/separator.dart';
 
 class MeDescription extends StatelessWidget {
-  const MeDescription({Key? key}) : super(key: key);
+  final bool mobile;
+  const MeDescription({Key? key, this.mobile = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,17 +16,19 @@ class MeDescription extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("Hey, ich bin", style: Theme.of(context).textTheme.headlineLarge),
+        Text("Hey, ich bin", style: mobile ? Theme.of(context).textTheme.titleLarge : Theme.of(context).textTheme.headlineLarge),
         Text(
           "Vanessa Gerdelmann",
-          style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                color: Theme.of(context).colorScheme.primary,
-              ),
+          style: mobile
+              ? Theme.of(context).textTheme.headlineLarge
+              : Theme.of(context).textTheme.displayLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
         ),
-        Text("eine Flutter-Softwareentwicklering", style: Theme.of(context).textTheme.displayMedium),
-        Text("aus Lingen", style: Theme.of(context).textTheme.headlineMedium),
+        Text("eine Flutter - Softwareentwicklerin", style: mobile ? Theme.of(context).textTheme.headlineLarge : Theme.of(context).textTheme.displayMedium),
+        Text("aus Lingen", style: mobile ? Theme.of(context).textTheme.titleLarge : Theme.of(context).textTheme.headlineMedium),
         const Separator.vertical(),
-        Text("Ich bin", style: Theme.of(context).textTheme.headlineLarge),
+        Text("Ich bin", style: mobile ? Theme.of(context).textTheme.headlineMedium : Theme.of(context).textTheme.headlineLarge),
         ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 600),
           child: Wrap(
@@ -35,7 +38,7 @@ class MeDescription extends StatelessWidget {
               Constants.characteristics.length,
               (index) => RandomColorText(
                 Constants.characteristics[index],
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: mobile ? Theme.of(context).textTheme.titleLarge : Theme.of(context).textTheme.headlineSmall,
               ),
             ),
           ),
@@ -43,10 +46,10 @@ class MeDescription extends StatelessWidget {
         const Separator.vertical(factor: 3),
         Text(
           "Neugierig auf mehr?",
-          style: Theme.of(context).textTheme.headlineMedium,
+          style: mobile ? Theme.of(context).textTheme.headlineSmall : Theme.of(context).textTheme.headlineMedium,
         ),
         const Separator.vertical(),
-        const NavBar(current: Routes.main),
+        NavBar(current: Routes.main, mobile: mobile),
       ],
     );
   }
