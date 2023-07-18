@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:me/business_logic/routing/routes.dart';
 
 import '../../business_logic/data/constants.dart';
 import '../../widgets/nav_bar.dart';
@@ -45,7 +46,7 @@ class MeDescription extends StatelessWidget {
           style: Theme.of(context).textTheme.headlineMedium,
         ),
         const Separator.vertical(),
-        const NavBar(),
+        const NavBar(current: Routes.main),
       ],
     );
   }
