@@ -10,6 +10,7 @@ void main() async {
     final license = await rootBundle.loadString('fonts/OFL.txt');
     yield LicenseEntryWithLineBreaks(['google_fonts'], license);
   });
+
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -27,14 +28,12 @@ class MyApp extends ConsumerWidget {
           brightness: Brightness.dark,
           seedColor: const Color(0xFF341BC3),
         ),
-        textTheme: GoogleFonts.playTextTheme(ThemeData.dark().textTheme).apply(
-            // displayColor: Theme.of(context).colorScheme.primary,
-            // bodyColor: Colors.white,
-            ),
+        textTheme: GoogleFonts.playTextTheme(ThemeData.dark().textTheme),
         filledButtonTheme: FilledButtonThemeData(
           style: FilledButton.styleFrom(
-            textStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
+            textStyle: GoogleFonts.playTextTheme(ThemeData.dark().textTheme).titleLarge?.copyWith(
                   color: Theme.of(context).colorScheme.primary,
+                  fontSize: 24,
                 ),
           ),
         ),
