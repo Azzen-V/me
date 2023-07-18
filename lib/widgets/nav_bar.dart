@@ -20,7 +20,7 @@ class NavBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               FilledButton(
-                onPressed: () => GoRouter.of(context).push('/'),
+                onPressed: () => GoRouter.of(context).go('/'),
                 child: const Text("Das bin ich"),
               ),
               const Separator.horizontal(),
@@ -33,7 +33,7 @@ class NavBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               FilledButton(
-                onPressed: () => GoRouter.of(context).push('/tech-stack'),
+                onPressed: () => GoRouter.of(context).go('/tech-stack'),
                 child: const Text("Tech-Stack"),
               ),
               const Separator.horizontal(),
@@ -46,7 +46,7 @@ class NavBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               FilledButton(
-                onPressed: () => GoRouter.of(context).push('/info'),
+                onPressed: () => GoRouter.of(context).go('/info'),
                 child: const Text("Lebenslauf"),
               ),
               const Separator.horizontal(),
@@ -56,7 +56,7 @@ class NavBar extends StatelessWidget {
         Visibility(
           visible: current != Routes.story,
           child: FilledButton(
-            onPressed: () => GoRouter.of(context).push('/my-story'),
+            onPressed: () => GoRouter.of(context).go('/my-story'),
             child: const Text("Über mich"),
           ),
         ),
