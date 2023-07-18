@@ -1,21 +1,24 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../business_logic/routing/root_router.dart';
-
-class DefaultScreen extends ConsumerWidget {
+class DefaultScreen extends StatelessWidget {
   final Widget child;
-  const DefaultScreen({Key? key, required this.child}) : super(key: key);
+  final String label;
+  final List<TextButton> destinations;
+  const DefaultScreen({
+    Key? key,
+    required this.child,
+    required this.label,
+    this.destinations = const [],
+  }) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    var router = ref.watch(RootRouter.router);
-    inspect(router);
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(""),
+        automaticallyImplyLeading: false,
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(label),
+        actions: destinations,
       ),
       body: child,
     );

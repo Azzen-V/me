@@ -9,5 +9,5 @@ class PersonalInformationRoute extends BasicRoute {
   String get label => "Persönliche Informationen";
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => const PersonalInformationScreen();
+  Widget build(BuildContext context, GoRouterState state) => PersonalInformationScreen(label: label);
 }

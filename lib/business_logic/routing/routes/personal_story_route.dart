@@ -8,5 +8,5 @@ class PersonalStoryRoute extends BasicRoute {
   String get label => "Meine Geschichte";
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => const PersonalStoryScreen();
+  Widget build(BuildContext context, GoRouterState state) => PersonalStoryScreen(label: label);
 }

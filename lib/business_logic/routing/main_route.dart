@@ -26,5 +26,5 @@ class MainRoute extends BasicRoute {
   final String label = "Hey, ich bin Vanessa!";
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => const MainScreen();
+  Widget build(BuildContext context, GoRouterState state) => MainScreen(label: label);
 }
