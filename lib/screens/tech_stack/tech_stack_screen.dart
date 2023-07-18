@@ -10,7 +10,7 @@ class TechStackScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultScreen(
       label: label,
-      child: const TechStackView(),
+      child: TechStackView(),
     );
   }
 }

@@ -1,26 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../business_logic/data/constants.dart';
 import '../../widgets/nav_bar.dart';
 import '../../widgets/random_color_text.dart';
 import '../../widgets/separator.dart';
 
 class MeDescription extends StatelessWidget {
-  final List<String> characteristics = [
-    "leidenschaftliche Softwareenwicklerin",
-    "immer für ein Lächeln zu haben",
-    "Designerin",
-    "Gamerin",
-    "Frontend-Dev",
-    "Motorsport-begeistert",
-    "Firebase-Profi",
-    "Fußballerin",
-    "Supabase-Profi",
-    "teamfähig",
-    "Flutter-Liebhaberin",
-    "Leseratte",
-    "Technik-Freundin"
-  ]..shuffle();
-  MeDescription({Key? key}) : super(key: key);
+  const MeDescription({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +31,9 @@ class MeDescription extends StatelessWidget {
             runSpacing: 12,
             spacing: 12,
             children: List.generate(
-              characteristics.length,
+              Constants.characteristics.length,
               (index) => RandomColorText(
-                characteristics[index],
+                Constants.characteristics[index],
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
             ),
