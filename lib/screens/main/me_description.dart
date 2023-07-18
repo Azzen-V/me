@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:me/widgets/random_color_text.dart';
-import 'package:me/widgets/separator.dart';
+
+import '../../widgets/nav_bar.dart';
+import '../../widgets/random_color_text.dart';
+import '../../widgets/separator.dart';
 
 class MeDescription extends StatelessWidget {
   final List<String> characteristics = [
@@ -58,24 +59,7 @@ class MeDescription extends StatelessWidget {
           style: Theme.of(context).textTheme.headlineMedium,
         ),
         const Separator.vertical(),
-        Row(
-          children: [
-            FilledButton(
-              onPressed: () => GoRouter.of(context).push('/tech-stack'),
-              child: const Text("Tech-Stack"),
-            ),
-            const Separator.horizontal(),
-            FilledButton(
-              onPressed: () => GoRouter.of(context).push('/info'),
-              child: const Text("Lebenslauf"),
-            ),
-            const Separator.horizontal(),
-            FilledButton(
-              onPressed: () => GoRouter.of(context).push('/my-story'),
-              child: const Text("Über mich"),
-            ),
-          ],
-        ),
+        const NavBar(),
       ],
     );
   }
