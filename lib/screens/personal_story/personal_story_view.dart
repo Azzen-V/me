@@ -23,7 +23,7 @@ class PersonalStoryView extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const BorderedImage(path: 'images/me_2.jpg', width: 400),
+                const BorderedImage(path: 'images/me_2.jpg', width: 450),
                 const Separator.horizontal(factor: 3),
                 Expanded(
                   child: Container(
