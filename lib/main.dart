@@ -31,6 +31,13 @@ class MyApp extends ConsumerWidget {
             // displayColor: Theme.of(context).colorScheme.primary,
             // bodyColor: Colors.white,
             ),
+        filledButtonTheme: FilledButtonThemeData(
+          style: FilledButton.styleFrom(
+            textStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+          ),
+        ),
         useMaterial3: true,
       ),
       routerConfig: ref.watch(RootRouter.router),

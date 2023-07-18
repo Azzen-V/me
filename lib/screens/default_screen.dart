@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class DefaultScreen extends StatelessWidget {
   final Widget child;
@@ -13,31 +12,21 @@ class DefaultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(label),
-        actions: [
-          TextButton(
-            onPressed: () async => await GoRouter.of(context).push("/"),
-            child: const Text("Das bin ich"),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: const Alignment(-0.3, -0.8),
+            stops: const [0.0, 0.8, 0.8, 1],
+            colors: [
+              Theme.of(context).colorScheme.inversePrimary,
+              Theme.of(context).colorScheme.inversePrimary,
+              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.background,
+            ],
           ),
-          TextButton(
-            onPressed: () async => await GoRouter.of(context).push("/tech-stack"),
-            child: const Text("Tech-Stack"),
-          ),
-          TextButton(
-            onPressed: () async => await GoRouter.of(context).push("/my-story"),
-            child: const Text("Meine Geschichte"),
-          ),
-          TextButton(
-            onPressed: () async => await GoRouter.of(context).push("/info"),
-            child: const Text("Persönliche Informationen"),
-          ),
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
+        ),
+        padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 150),
         child: child,
       ),
     );

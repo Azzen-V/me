@@ -11,7 +11,7 @@ class RandomColorText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color color = _getRandomColor();
-    while (color.computeLuminance() <= 0.5) {
+    while (color.computeLuminance() <= 0.25) {
       color = _getRandomColor();
     }
     return Text(

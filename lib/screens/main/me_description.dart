@@ -28,7 +28,12 @@ class MeDescription extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text("Hey, ich bin", style: Theme.of(context).textTheme.headlineLarge),
-        Text("Vanessa Gerdelmann", style: Theme.of(context).textTheme.displayLarge),
+        Text(
+          "Vanessa Gerdelmann",
+          style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                color: Theme.of(context).colorScheme.primary,
+              ),
+        ),
         Text("eine Flutter-Softwareentwicklering", style: Theme.of(context).textTheme.displayMedium),
         Text("aus Lingen", style: Theme.of(context).textTheme.headlineMedium),
         const Separator.vertical(),
@@ -48,14 +53,28 @@ class MeDescription extends StatelessWidget {
           ),
         ),
         const Separator.vertical(factor: 3),
-        FilledButton(
-          onPressed: () => GoRouter.of(context).push('/tech-stack'),
-          child: Text(
-            "Neugierig auf mehr?",
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.inversePrimary,
-                ),
-          ),
+        Text(
+          "Neugierig auf mehr?",
+          style: Theme.of(context).textTheme.headlineMedium,
+        ),
+        const Separator.vertical(),
+        Row(
+          children: [
+            FilledButton(
+              onPressed: () => GoRouter.of(context).push('/tech-stack'),
+              child: const Text("Tech-Stack"),
+            ),
+            const Separator.horizontal(),
+            FilledButton(
+              onPressed: () => GoRouter.of(context).push('/info'),
+              child: const Text("Lebenslauf"),
+            ),
+            const Separator.horizontal(),
+            FilledButton(
+              onPressed: () => GoRouter.of(context).push('/my-story'),
+              child: const Text("Über mich"),
+            ),
+          ],
         ),
       ],
     );
