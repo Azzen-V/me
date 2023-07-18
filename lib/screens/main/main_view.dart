@@ -12,8 +12,8 @@ class MainView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        BorderedImage(path: 'images/me_2.jpg'),
-        Separator.horizontal(factor: 2),
+        BorderedImage(path: 'images/me_2.jpg', width: 550),
+        Separator.horizontal(factor: 3),
         Flexible(child: MeDescription()),
       ],
     );

@@ -26,8 +26,12 @@ class DefaultScreen extends StatelessWidget {
             ],
           ),
         ),
-        padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 150),
-        child: child,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 150),
+            child: child,
+          ),
+        ),
       ),
     );
   }

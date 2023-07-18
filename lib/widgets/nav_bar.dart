@@ -12,10 +12,12 @@ class NavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         Visibility(
           visible: current != Routes.main,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               FilledButton(
                 onPressed: () => GoRouter.of(context).push('/'),
@@ -28,6 +30,7 @@ class NavBar extends StatelessWidget {
         Visibility(
           visible: current != Routes.techStack,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               FilledButton(
                 onPressed: () => GoRouter.of(context).push('/tech-stack'),
@@ -40,6 +43,7 @@ class NavBar extends StatelessWidget {
         Visibility(
           visible: current != Routes.info,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               FilledButton(
                 onPressed: () => GoRouter.of(context).push('/info'),

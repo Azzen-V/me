@@ -16,7 +16,7 @@ class TechStackView extends StatelessWidget {
         const Stack(
           alignment: Alignment.bottomCenter,
           children: [
-            BorderedImage(path: "images/me_1.jpg"),
+            BorderedImage(path: "images/me_1.jpg", width: 550),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 20),
               child: NavBar(current: Routes.techStack),
