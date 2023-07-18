@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:me/screens/default_screen.dart';
+import 'package:me/screens/personal_story/personal_story_view.dart';
 
-class MainScreen extends StatelessWidget {
+class PersonalStoryScreen extends StatelessWidget {
   final String label;
-  const MainScreen({Key? key, required this.label}) : super(key: key);
+  const PersonalStoryScreen({Key? key, required this.label}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,15 +13,15 @@ class MainScreen extends StatelessWidget {
       label: label,
       destinations: [
         TextButton(
-          onPressed: () async => await GoRouter.of(context).push("/my-story"),
-          child: const Text("Meine Geschichte"),
+          onPressed: () async => await GoRouter.of(context).push("/"),
+          child: const Text("Das bin ich"),
         ),
         TextButton(
           onPressed: () async => await GoRouter.of(context).push("/info"),
           child: const Text("Persönliche Informationen"),
         ),
       ],
-      child: Container(),
+      child: const PersonalStoryView(),
     );
   }
 }

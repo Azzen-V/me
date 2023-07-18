@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:me/screens/default_screen.dart';
+import 'package:me/screens/personal_information/personal_information_view.dart';
 
 class PersonalInformationScreen extends StatelessWidget {
   final String label;
@@ -20,7 +21,7 @@ class PersonalInformationScreen extends StatelessWidget {
           child: const Text("Meine Geschichte"),
         ),
       ],
-      child: Container(),
+      child: const PersonalInformationView(),
     );
   }
 }
