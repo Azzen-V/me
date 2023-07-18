@@ -87,8 +87,8 @@ class PersonalStoryView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         LargeText("Zu meinen Aufgaben bei Racler Prodcutions gehörte neben der Flutter- "
-                            "und Angular-Entwickung auch das erstellen von Designs. Hier erkannte "
-                            "ich eine weitere meiner Leidenschaften. Das kreative Erschaffen von Nutzer-"
+                            "und Angular-Entwickung auch das Erstellen von Designs. Hier erkannte "
+                            "ich eine weitere meiner Leidenschaften: Das kreative Erschaffen von Nutzer-"
                             "Oberflächen verbesserte nicht nur meinen Workflow in der Entwicklung, "
                             "weil nun endlich ein Plan, eine Anleitung für das zu entwickelnde Feature "
                             "existierte, nein es war auch eine willkommene Abwechslung für den Alltag."),
@@ -106,7 +106,7 @@ class PersonalStoryView extends StatelessWidget {
                         Separator.vertical(factor: 0.25),
                         LargeText("Mein Weg ist vielleicht nicht der Musterweg, den man sich so vorstellt, "
                             "wenn man sein Leben plant. Aber es ist der Weg, der für mich funktioniert "
-                            "und er hat mich gelehrt, schnell in einfallsreich mit Problematiken umzugehen."),
+                            "und er hat mich gelehrt, schnell und einfallsreich mit Problematiken umzugehen."),
                         Separator.vertical(factor: 5),
                         LargeText("Habe ich Sie überzeugt? Dann melden Sie sich gerne für ein persönliches "
                             "Vorstellungsgespräch bei mir. Ich bin sicher, dass ich eine Bereicherung für "

@@ -12,7 +12,8 @@ class Constants {
     "teamfähig",
     "Flutter-Liebhaberin",
     "Leseratte",
-    "Technik-Freundin"
+    "Technik-Freundin",
+    "Problem-Löserin"
   ]..shuffle();
   static const List<List<String>> techStack = [
     ["Flutter", "C#", "Java"],
