@@ -1,8 +1,15 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:me/business_logic/routing/root_router.dart';
 
-void main() {
+void main() async {
+  LicenseRegistry.addLicense(() async* {
+    final license = await rootBundle.loadString('fonts/OFL.txt');
+    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+  });
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -20,6 +27,10 @@ class MyApp extends ConsumerWidget {
           brightness: Brightness.dark,
           seedColor: const Color(0xFF341BC3),
         ),
+        textTheme: GoogleFonts.playTextTheme(ThemeData.dark().textTheme).apply(
+            // displayColor: Theme.of(context).colorScheme.primary,
+            // bodyColor: Colors.white,
+            ),
         useMaterial3: true,
       ),
       routerConfig: ref.watch(RootRouter.router),

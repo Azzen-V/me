@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:me/business_logic/routing/routes/personal_information_route.dart';
 import 'package:me/business_logic/routing/routes/personal_story_route.dart';
+import 'package:me/business_logic/routing/routes/tech_steck_route.dart';
 import 'package:me/screens/main/main_screen.dart';
 
 import 'routes/basic_route.dart';
@@ -18,6 +19,9 @@ part 'main_route.g.dart';
     ),
     TypedGoRoute<PersonalStoryRoute>(
       path: 'my-story',
+    ),
+    TypedGoRoute<TechStackRoute>(
+      path: 'tech-stack',
     ),
   ],
 )

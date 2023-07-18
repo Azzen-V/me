@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:me/screens/default_screen.dart';
-import 'package:me/screens/personal_information/personal_information_view.dart';
+
+import '../default_screen.dart';
+import 'personal_information_view.dart';
 
 class PersonalInformationScreen extends StatelessWidget {
   final String label;
@@ -11,16 +11,6 @@ class PersonalInformationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultScreen(
       label: label,
-      destinations: [
-        TextButton(
-          onPressed: () async => await GoRouter.of(context).push("/"),
-          child: const Text("Das bin ich"),
-        ),
-        TextButton(
-          onPressed: () async => await GoRouter.of(context).push("/my-story"),
-          child: const Text("Meine Geschichte"),
-        ),
-      ],
       child: const PersonalInformationView(),
     );
   }

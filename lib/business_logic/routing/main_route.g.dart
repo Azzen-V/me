@@ -22,6 +22,10 @@ RouteBase get $mainRoute => GoRouteData.$route(
           path: 'my-story',
           factory: $PersonalStoryRouteExtension._fromState,
         ),
+        GoRouteData.$route(
+          path: 'tech-stack',
+          factory: $TechStackRouteExtension._fromState,
+        ),
       ],
     );
 
@@ -66,6 +70,23 @@ extension $PersonalStoryRouteExtension on PersonalStoryRoute {
 
   String get location => GoRouteData.$location(
         '/my-story',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $TechStackRouteExtension on TechStackRoute {
+  static TechStackRoute _fromState(GoRouterState state) => TechStackRoute();
+
+  String get location => GoRouteData.$location(
+        '/tech-stack',
       );
 
   void go(BuildContext context) => context.go(location);

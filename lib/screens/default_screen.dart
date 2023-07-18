@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class DefaultScreen extends StatelessWidget {
   final Widget child;
   final String label;
-  final List<TextButton> destinations;
   const DefaultScreen({
     Key? key,
     required this.child,
     required this.label,
-    this.destinations = const [],
   }) : super(key: key);
 
   @override
@@ -18,9 +17,29 @@ class DefaultScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(label),
-        actions: destinations,
+        actions: [
+          TextButton(
+            onPressed: () async => await GoRouter.of(context).push("/"),
+            child: const Text("Das bin ich"),
+          ),
+          TextButton(
+            onPressed: () async => await GoRouter.of(context).push("/tech-stack"),
+            child: const Text("Tech-Stack"),
+          ),
+          TextButton(
+            onPressed: () async => await GoRouter.of(context).push("/my-story"),
+            child: const Text("Meine Geschichte"),
+          ),
+          TextButton(
+            onPressed: () async => await GoRouter.of(context).push("/info"),
+            child: const Text("Persönliche Informationen"),
+          ),
+        ],
       ),
-      body: child,
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: child,
+      ),
     );
   }
 }
