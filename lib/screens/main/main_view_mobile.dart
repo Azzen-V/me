@@ -19,7 +19,6 @@ class MainViewMobile extends StatelessWidget {
         const Separator.vertical(factor: 3),
         LayoutBuilder(
           builder: ((context, constraints) {
-            print(constraints.maxWidth);
             if (constraints.maxWidth <= 620) {
               return Column(
                 children: [
