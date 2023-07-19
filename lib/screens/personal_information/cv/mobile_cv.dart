@@ -24,7 +24,7 @@ class MobileCV extends StatefulWidget {
 
 class _MobileCVState extends State<MobileCV> with TickerProviderStateMixin {
   final Duration _duration = const Duration(milliseconds: 300);
-  final Curve _curve = Curves.bounceInOut;
+  final Curve _curve = Curves.easeInOut;
 
   late final AnimationController _controllerWork = AnimationController(duration: _duration, vsync: this)..forward();
   late final Animation<double> _animationWork = CurvedAnimation(parent: _controllerWork, curve: _curve);
@@ -39,6 +39,19 @@ class _MobileCVState extends State<MobileCV> with TickerProviderStateMixin {
   late final Animation<double> _animationSkills = CurvedAnimation(parent: _controllerSkills, curve: _curve);
 
   CVType _current = CVType.work;
+  bool _workVisible = true;
+  bool _schoolVisible = false;
+  bool _contactVisible = false;
+  bool _skillsVisible = false;
+
+  @override
+  void dispose() {
+    _controllerWork.dispose();
+    _controllerSchool.dispose();
+    _controllerContact.dispose();
+    _controllerSkills.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,30 +60,23 @@ class _MobileCVState extends State<MobileCV> with TickerProviderStateMixin {
       children: [
         // Work
         ExpandableItem(
-          onTap: () async {
-            setState(() => _current = CVType.work);
-            await _handleAnimation();
-          },
+          onTap: _workOnTap,
           animation: _animationWork,
           items: Constants.work,
+          visible: _workVisible,
           child: const ColoredPillWork(center: true),
         ),
         // School
         ExpandableItem(
-          onTap: () async {
-            setState(() => _current = CVType.school);
-            await _handleAnimation();
-          },
+          onTap: _schoolOnTap,
           animation: _animationSchool,
           items: Constants.school,
+          visible: _schoolVisible,
           child: const ColoredPillSchool(center: true),
         ),
         // Contact
         ExpandableItem(
-          onTap: () async {
-            setState(() => _current = CVType.contact);
-            await _handleAnimation();
-          },
+          onTap: _contactOnTap,
           animation: _animationContact,
           animatedChild: const Column(
             children: [
@@ -78,20 +84,79 @@ class _MobileCVState extends State<MobileCV> with TickerProviderStateMixin {
               Separator.vertical(factor: 2),
             ],
           ),
+          visible: _contactVisible,
           child: const ColoredPillContact(),
         ),
         // Skills
         ExpandableItem(
-          onTap: () async {
-            setState(() => _current = CVType.skills);
-            await _handleAnimation();
-          },
+          onTap: _skillsOnTap,
           animation: _animationSkills,
           items: Constants.skills,
+          visible: _skillsVisible,
           child: const ColoredPillSkills(),
         ),
       ],
     );
+  }
+
+  Future<void> _workOnTap() async {
+    setState(() {
+      _current = CVType.work;
+      _workVisible = true;
+    });
+    await _handleAnimation();
+    if (mounted) {
+      setState(() {
+        _schoolVisible = false;
+        _contactVisible = false;
+        _skillsVisible = false;
+      });
+    }
+  }
+
+  Future<void> _schoolOnTap() async {
+    setState(() {
+      _current = CVType.school;
+      _schoolVisible = true;
+    });
+    await _handleAnimation();
+    if (mounted) {
+      setState(() {
+        _workVisible = false;
+        _contactVisible = false;
+        _skillsVisible = false;
+      });
+    }
+  }
+
+  Future<void> _contactOnTap() async {
+    setState(() {
+      _current = CVType.contact;
+      _contactVisible = true;
+    });
+    await _handleAnimation();
+    if (mounted) {
+      setState(() {
+        _schoolVisible = false;
+        _workVisible = false;
+        _skillsVisible = false;
+      });
+    }
+  }
+
+  Future<void> _skillsOnTap() async {
+    setState(() {
+      _current = CVType.skills;
+      _skillsVisible = true;
+    });
+    await _handleAnimation();
+    if (mounted) {
+      setState(() {
+        _schoolVisible = false;
+        _contactVisible = false;
+        _workVisible = false;
+      });
+    }
   }
 
   Future<void> _handleAnimation() async {
@@ -117,5 +182,6 @@ class _MobileCVState extends State<MobileCV> with TickerProviderStateMixin {
         _controllerSchool.reverse();
         _controllerWork.reverse();
     }
+    await Future.delayed(_duration);
   }
 }

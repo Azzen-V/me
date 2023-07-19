@@ -8,6 +8,7 @@ class ExpandableItem extends StatelessWidget {
   final Animation<double> animation;
   final Map<String, String>? items;
   final Widget? animatedChild;
+  final bool visible;
   ExpandableItem({
     Key? key,
     required this.animation,
@@ -15,6 +16,7 @@ class ExpandableItem extends StatelessWidget {
     required this.onTap,
     required this.child,
     this.animatedChild,
+    required this.visible,
   }) : super(key: key) {
     assert(animatedChild != null || items != null);
   }
@@ -29,13 +31,16 @@ class ExpandableItem extends StatelessWidget {
           child: child,
         ),
         const Separator.vertical(),
-        SizeTransition(
-          sizeFactor: animation,
-          child: animatedChild ??
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: _items(items!, context),
-              ),
+        Visibility(
+          visible: visible,
+          child: SizeTransition(
+            sizeFactor: animation,
+            child: animatedChild ??
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: _items(items!, context),
+                ),
+          ),
         )
       ],
     );
