@@ -22,12 +22,17 @@ class HexContent extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          label,
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                color: darker ? Theme.of(context).colorScheme.primary : Theme.of(context).colorScheme.inversePrimary,
-              ),
+        Flexible(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: Text(
+              label,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                    color: darker ? Theme.of(context).colorScheme.primary : Theme.of(context).colorScheme.inversePrimary,
+                  ),
+            ),
+          ),
         ),
         if (path.isNotEmpty && showImage) ...[
           const Separator.vertical(),

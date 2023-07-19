@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hexagon/hexagon.dart';
 import 'package:me/business_logic/data/constants.dart';
+import 'package:me/business_logic/routing/routes.dart';
 import 'package:me/screens/tech_stack/hex_content.dart';
+import 'package:me/widgets/nav_bar.dart';
 import 'package:me/widgets/separator.dart';
 
 class TechStackMobileView extends StatelessWidget {
@@ -20,6 +22,8 @@ class TechStackMobileView extends StatelessWidget {
 
     return Column(
       children: [
+        const NavBar(current: Routes.techStack, mobile: true),
+        const Separator.vertical(),
         SizedBox(
           height: _hexSize / 3 * 2 * techStack.length + _hexSize / 3, // 2 thirds of hex size * no of hex + last thirst of hex size
           child: Stack(
