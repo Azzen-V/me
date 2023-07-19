@@ -7,11 +7,13 @@ import 'dart:html' as html;
 import '../../widgets/separator.dart';
 
 class Social extends StatelessWidget {
-  const Social({Key? key}) : super(key: key);
+  final MainAxisAlignment mainAxisAlignment;
+  const Social({Key? key, this.mainAxisAlignment = MainAxisAlignment.start}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: mainAxisAlignment,
       children: [
         IconButton.filled(
           onPressed: () => _launchUrl("https://www.instagram.com/azzen_v/"),

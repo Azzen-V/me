@@ -14,6 +14,8 @@ class PersonalStoryView extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
+        bool break1 = constraints.maxWidth >= 950;
+        bool break2 = constraints.maxWidth >= 870;
         return Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 1350),
@@ -28,7 +30,7 @@ class PersonalStoryView extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    if (constraints.maxWidth >= 950) ...[
+                    if (break1) ...[
                       Flexible(child: _image1),
                       const Separator.horizontal(factor: 3),
                     ],
@@ -81,7 +83,7 @@ class PersonalStoryView extends StatelessWidget {
                   ],
                 ),
                 const Separator.vertical(factor: 3),
-                if (constraints.maxWidth <= 870) ...[
+                if (!break2) ...[
                   Row(
                     children: [
                       Flexible(child: _image1),
@@ -102,41 +104,43 @@ class PersonalStoryView extends StatelessWidget {
                           color: Theme.of(context).colorScheme.inverseSurface.withOpacity(0.8),
                         ),
                         padding: const EdgeInsets.all(15),
-                        child: const Column(
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            LargeText("Zu meinen Aufgaben bei Racler Prodcutions gehörte neben der Flutter- "
-                                "und Angular-Entwickung auch das Erstellen von Designs. Hier erkannte "
-                                "ich eine weitere meiner Leidenschaften: Das kreative Erschaffen von Nutzer-"
-                                "Oberflächen verbesserte nicht nur meinen Workflow in der Entwicklung, "
-                                "weil nun endlich ein Plan, eine Anleitung für das zu entwickelnde Feature "
-                                "existierte, nein es war auch eine willkommene Abwechslung für den Alltag."),
-                            Separator.vertical(factor: 0.25),
-                            LargeText("Da wir backendseitig sowohl Firebase als auch Supabase verwendeten, "
-                                "kann ich mit beidem umgehen und schnell alternative SQL- und NoSQL-Systeme "
-                                "adaptieren."),
-                            Separator.vertical(factor: 0.25),
-                            LargeText("Ich war sowohl für iOS- als auch für Android-Releases "
-                                "mitverantwortlich und kenne die üblichen Tücken und Problemchen, die sich "
-                                "einem Entwickler dabei gerne mal in den Weg stellen."),
-                            Separator.vertical(factor: 0.25),
-                            LargeText("Generell erlerne ich schnell neue Technologien und lege großen Wert "
-                                "auf qualitativ hochwertigen Code."),
-                            Separator.vertical(factor: 0.25),
-                            LargeText("Mein Weg ist vielleicht nicht der Musterweg, den man sich so vorstellt, "
-                                "wenn man sein Leben plant. Aber es ist der Weg, der für mich funktioniert "
-                                "und er hat mich gelehrt, schnell und einfallsreich mit Problematiken umzugehen."),
-                            Separator.vertical(factor: 5),
-                            LargeText("Habe ich Sie überzeugt? Dann melden Sie sich gerne für ein persönliches "
-                                "Vorstellungsgespräch bei mir. Ich bin sicher, dass ich eine Bereicherung für "
-                                "Ihr Unternehmen sein werde!"),
-                            Separator.vertical(),
-                            Social(),
+                            ...const [
+                              LargeText("Zu meinen Aufgaben bei Racler Prodcutions gehörte neben der Flutter- "
+                                  "und Angular-Entwickung auch das Erstellen von Designs. Hier erkannte "
+                                  "ich eine weitere meiner Leidenschaften: Das kreative Erschaffen von Nutzer-"
+                                  "Oberflächen verbesserte nicht nur meinen Workflow in der Entwicklung, "
+                                  "weil nun endlich ein Plan, eine Anleitung für das zu entwickelnde Feature "
+                                  "existierte, nein es war auch eine willkommene Abwechslung für den Alltag."),
+                              Separator.vertical(factor: 0.25),
+                              LargeText("Da wir backendseitig sowohl Firebase als auch Supabase verwendeten, "
+                                  "kann ich mit beidem umgehen und schnell alternative SQL- und NoSQL-Systeme "
+                                  "adaptieren."),
+                              Separator.vertical(factor: 0.25),
+                              LargeText("Ich war sowohl für iOS- als auch für Android-Releases "
+                                  "mitverantwortlich und kenne die üblichen Tücken und Problemchen, die sich "
+                                  "einem Entwickler dabei gerne mal in den Weg stellen."),
+                              Separator.vertical(factor: 0.25),
+                              LargeText("Generell erlerne ich schnell neue Technologien und lege großen Wert "
+                                  "auf qualitativ hochwertigen Code."),
+                              Separator.vertical(factor: 0.25),
+                              LargeText("Mein Weg ist vielleicht nicht der Musterweg, den man sich so vorstellt, "
+                                  "wenn man sein Leben plant. Aber es ist der Weg, der für mich funktioniert "
+                                  "und er hat mich gelehrt, schnell und einfallsreich mit Problematiken umzugehen."),
+                              Separator.vertical(factor: 5),
+                              LargeText("Habe ich Sie überzeugt? Dann melden Sie sich gerne für ein persönliches "
+                                  "Vorstellungsgespräch bei mir. Ich bin sicher, dass ich eine Bereicherung für "
+                                  "Ihr Unternehmen sein werde!"),
+                              Separator.vertical(),
+                            ],
+                            Social(mainAxisAlignment: !break2 ? MainAxisAlignment.center : MainAxisAlignment.start),
                           ],
                         ),
                       ),
                     ),
-                    if (constraints.maxWidth >= 870) ...[
+                    if (break2) ...[
                       const Separator.horizontal(factor: 3),
                       Flexible(child: _image2),
                     ],
