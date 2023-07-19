@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:me/screens/personal_information/social.dart';
 
-import '../../widgets/bordered_image.dart';
+import '../../../widgets/bordered_image.dart';
 
 class CVImage extends StatelessWidget {
   const CVImage({Key? key}) : super(key: key);

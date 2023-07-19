@@ -37,4 +37,23 @@ class Constants {
     ["images/firebase.png", "images/supabase.png", "images/figma.webp"],
     ["", "", ""],
   ];
+
+  static Map<String, String> work = {
+    "07.2022 - heute": "Flutter Entwickler bei Racler Productions",
+    "09.2021 - 06.2022": "Flutter Entwickler bei Racler Productions (Werkstudent)",
+    "08.2019 - 09.2020": "Ausbildung zur Fachinformatikerin für Anwendungsentwicklung",
+  };
+
+  static Map<String, String> school = {
+    "06.2022 - heute": "Studium Softwareengineering (AKAD University)",
+    "10.2020 - 05.2022": "Studium der Informatik (Universität Osnabrück)",
+    "08.2017 - 07.2018": "Berufliches Gymnasium (BBS Lingen Agrar und Soziales)",
+    "08.2014 - 07.2017": "Berufliches Gymnasium (BBS Meppen)",
+  };
+
+  static Map<String, String> skills = {
+    "IT-Kentnisse": "Flutter, Angular, C#, Java, TypeScript, GitHub, Firebase, Supabase, Web-Entwicklung, VBA, VBScript",
+    "Fremdsprachen": "Englisch, Französisch (DELF A2)",
+    "Hobbies": "Programmieren, Lesen, Computerspiele, Motorsport, Fußball",
+  };
 }

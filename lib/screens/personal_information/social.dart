@@ -14,6 +14,7 @@ class Social extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: mainAxisAlignment,
+      mainAxisSize: MainAxisSize.min,
       children: [
         IconButton.filled(
           onPressed: () => _launchUrl("https://www.instagram.com/azzen_v/"),

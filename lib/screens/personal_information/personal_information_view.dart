@@ -3,8 +3,8 @@ import 'package:me/business_logic/routing/routes.dart';
 import 'package:me/widgets/nav_bar.dart';
 
 import '../../widgets/separator.dart';
-import 'cv.dart';
-import 'headline.dart';
+import 'cv/cv.dart';
+import 'headline/headline.dart';
 
 class PersonalInformationView extends StatelessWidget {
   final double mobileBreakpoint;

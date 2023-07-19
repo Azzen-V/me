@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:me/screens/personal_information/personal_information_mobile_view.dart';
 
 import '../default_screen.dart';
 import 'personal_information_view.dart';
@@ -15,7 +16,7 @@ class PersonalInformationScreen extends StatelessWidget {
         return DefaultScreen(
           label: label,
           mobilePadding: constraints.maxWidth <= _mobileBreakpoint,
-          child: const PersonalInformationView(mobileBreakpoint: _mobileBreakpoint),
+          child: constraints.maxWidth <= 550 ? const PersonalInformationMobileView() : const PersonalInformationView(mobileBreakpoint: _mobileBreakpoint),
         );
       },
     );
