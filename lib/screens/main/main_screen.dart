@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:me/screens/main/main_view_medium.dart';
 import 'package:me/screens/main/main_view_mobile.dart';
 
 import '../default_screen.dart';
@@ -13,8 +14,10 @@ class MainScreen extends StatelessWidget {
     return DefaultScreen(
       label: label,
       child: LayoutBuilder(builder: (context, constraints) {
-        if (constraints.maxWidth <= 1200) {
+        if (constraints.maxWidth <= 850) {
           return const MainViewMobile();
+        } else if (constraints.maxWidth <= 1100) {
+          return const MainViewMedium();
         }
         return const MainView();
       }),

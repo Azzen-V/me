@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:me/business_logic/routing/routes.dart';
 
 import '../../business_logic/data/constants.dart';
-import '../../widgets/nav_bar.dart';
 import '../../widgets/random_color_text.dart';
 import '../../widgets/separator.dart';
 
@@ -25,7 +23,7 @@ class MeDescription extends StatelessWidget {
                     color: Theme.of(context).colorScheme.primary,
                   ),
         ),
-        Text("eine Flutter - Softwareentwicklerin", style: mobile ? Theme.of(context).textTheme.headlineLarge : Theme.of(context).textTheme.displayMedium),
+        Text("eine Flutter - Softwareentwicklerin", style: mobile ? Theme.of(context).textTheme.headlineMedium : Theme.of(context).textTheme.displayMedium),
         Text("aus Lingen", style: mobile ? Theme.of(context).textTheme.titleLarge : Theme.of(context).textTheme.headlineMedium),
         const Separator.vertical(),
         Text("Ich bin", style: mobile ? Theme.of(context).textTheme.headlineMedium : Theme.of(context).textTheme.headlineLarge),
@@ -43,13 +41,6 @@ class MeDescription extends StatelessWidget {
             ),
           ),
         ),
-        const Separator.vertical(factor: 3),
-        Text(
-          "Neugierig auf mehr?",
-          style: mobile ? Theme.of(context).textTheme.headlineSmall : Theme.of(context).textTheme.headlineMedium,
-        ),
-        const Separator.vertical(),
-        NavBar(current: Routes.main, mobile: mobile),
       ],
     );
   }
