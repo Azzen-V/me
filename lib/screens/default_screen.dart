@@ -17,7 +17,7 @@ class DefaultScreen extends StatelessWidget {
         if (constraints.maxWidth <= 700) {
           padding = const EdgeInsets.symmetric(vertical: 30, horizontal: 30);
         } else {
-          padding = const EdgeInsets.symmetric(vertical: 100, horizontal: 150);
+          padding = const EdgeInsets.symmetric(vertical: 100, horizontal: 100);
         }
         return Scaffold(
           body: Container(

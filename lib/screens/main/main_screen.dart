@@ -15,7 +15,7 @@ class MainScreen extends StatelessWidget {
       label: label,
       child: LayoutBuilder(builder: (context, constraints) {
         if (constraints.maxWidth <= 850) {
-          return const MainViewMobile();
+          return const Center(child: MainViewMobile());
         } else if (constraints.maxWidth <= 1100) {
           return const MainViewMedium();
         }

@@ -14,9 +14,9 @@ class TechStackMediumView extends StatelessWidget {
       builder: (context, constraints) {
         return Column(
           children: [
-            NavBar(current: Routes.techStack, mobile: constraints.maxWidth < 810),
+            NavBar(current: Routes.techStack, mobile: constraints.maxWidth < 550),
             const Separator.vertical(),
-            const TechStackHexGrid(mobile: true),
+            const TechStackHexGrid(),
           ],
         );
       },
