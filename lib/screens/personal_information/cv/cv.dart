@@ -76,26 +76,32 @@ class CV extends StatelessWidget {
         children: [
           ColoredPillWork(center: center),
           const Separator.vertical(),
-          NoHeaderTable(
-            rows: List.generate(
-              Constants.work.length,
-              (index) => TwoColumnDataRow(
-                Constants.work.keys.toList()[index],
-                Constants.work.values.toList()[index],
-                style: Theme.of(context).textTheme.titleLarge,
+          Align(
+            alignment: Alignment.centerLeft,
+            child: NoHeaderTable(
+              rows: List.generate(
+                Constants.work.length,
+                (index) => TwoColumnDataRow(
+                  Constants.work.keys.toList()[index],
+                  Constants.work.values.toList()[index],
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
               ),
             ),
           ),
           const Separator.vertical(factor: 2),
           ColoredPillSchool(center: center),
           const Separator.vertical(),
-          NoHeaderTable(
-            rows: List.generate(
-              Constants.school.length,
-              (index) => TwoColumnDataRow(
-                Constants.school.keys.toList()[index],
-                Constants.school.values.toList()[index],
-                style: Theme.of(context).textTheme.titleLarge,
+          Align(
+            alignment: Alignment.centerLeft,
+            child: NoHeaderTable(
+              rows: List.generate(
+                Constants.school.length,
+                (index) => TwoColumnDataRow(
+                  Constants.school.keys.toList()[index],
+                  Constants.school.values.toList()[index],
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
               ),
             ),
           ),
