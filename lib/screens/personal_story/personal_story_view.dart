@@ -152,6 +152,6 @@ class PersonalStoryView extends StatelessWidget {
     );
   }
 
-  Widget get _image1 => const BorderedImage(path: 'images/me_2.jpg');
-  Widget get _image2 => const BorderedImage(path: 'images/me_1.jpg');
+  Widget get _image1 => const BorderedImage(path: 'assets/images/me_2.jpg');
+  Widget get _image2 => const BorderedImage(path: 'assets/images/me_1.jpg');
 }

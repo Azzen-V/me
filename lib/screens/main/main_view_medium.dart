@@ -17,7 +17,7 @@ class MainViewMedium extends StatelessWidget {
       children: [
         const Row(
           children: [
-            Flexible(child: BorderedImage(path: 'images/me_2.jpg')),
+            Flexible(child: BorderedImage(path: 'assets/images/me_2.jpg')),
             Separator.horizontal(factor: 3),
             MeDescription(mobile: true),
           ],

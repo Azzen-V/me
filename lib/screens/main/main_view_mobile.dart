@@ -54,6 +54,6 @@ class MainViewMobile extends StatelessWidget {
   }
 
   Widget get _image {
-    return const BorderedImage(path: 'images/me_2.jpg', width: 400);
+    return const BorderedImage(path: 'assets/images/me_2.jpg', width: 400);
   }
 }

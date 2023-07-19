@@ -21,9 +21,9 @@ class Constants {
     ["Firebase", "Supabase", "Figma", "lerne ich schnell!"],
   ];
   static const List<List<String>> paths = [
-    ["images/flutter.png", "images/csharp.png", "images/java.png", ""],
-    ["images/typescript.webp", "images/angular.png", "images/github.png", ""],
-    ["images/firebase.png", "images/supabase.png", "images/figma.webp", ""],
+    ["assets/images/flutter.png", "assets/images/csharp.png", "assets/images/java.png", ""],
+    ["assets/images/typescript.webp", "assets/images/angular.png", "assets/images/github.png", ""],
+    ["assets/images/firebase.png", "assets/images/supabase.png", "assets/images/figma.webp", ""],
   ];
   static const List<List<String>> techStackMobile = [
     ["Flutter", "C#", "Java"],
@@ -32,9 +32,9 @@ class Constants {
     ["... und alles", "Weitere", "lerne ich schnell!"],
   ];
   static const List<List<String>> pathsMobile = [
-    ["images/flutter.png", "images/csharp.png", "images/java.png"],
-    ["images/typescript.webp", "images/angular.png", "images/github.png"],
-    ["images/firebase.png", "images/supabase.png", "images/figma.webp"],
+    ["assets/images/flutter.png", "assets/images/csharp.png", "assets/images/java.png"],
+    ["assets/images/typescript.webp", "assets/images/angular.png", "assets/images/github.png"],
+    ["assets/images/firebase.png", "assets/images/supabase.png", "assets/images/figma.webp"],
     ["", "", ""],
   ];
 

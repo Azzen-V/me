@@ -1,11 +1,11 @@
 {
-    "name": "me",
-    "short_name": "me",
+    "name": "Hallo, ich bin Vanessa Gerdelmann",
+    "short_name": "Hallo, ich bin Vanessa Gerdelmann",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Herzlich Willkommen auf meiner Homepage.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

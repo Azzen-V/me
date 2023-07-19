@@ -12,7 +12,7 @@ class CVImage extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       children: [
         BorderedImage(
-          path: 'images/me_1.jpg',
+          path: 'assets/images/me_1.jpg',
           radius: 1000,
           width: 200,
         ),
