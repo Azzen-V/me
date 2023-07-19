@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_web_libraries_in_flutter
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:html' as html;
@@ -33,7 +35,5 @@ class Social extends StatelessWidget {
     );
   }
 
-  void _launchUrl(String url) {
-    html.window.open(url, 'new tab');
-  }
+  void _launchUrl(String url) => html.window.open(url, 'new tab');
 }
