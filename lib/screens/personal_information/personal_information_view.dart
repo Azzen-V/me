@@ -7,18 +7,24 @@ import 'cv.dart';
 import 'headline.dart';
 
 class PersonalInformationView extends StatelessWidget {
-  const PersonalInformationView({Key? key}) : super(key: key);
+  final double mobileBreakpoint;
+  const PersonalInformationView({Key? key, required this.mobileBreakpoint}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        NavBar(current: Routes.info),
-        Headline(),
-        Separator.vertical(factor: 3),
-        CV(),
-      ],
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Column(
+          crossAxisAlignment: constraints.maxWidth <= mobileBreakpoint ? CrossAxisAlignment.center : CrossAxisAlignment.end,
+          children: [
+            const NavBar(current: Routes.info),
+            const Separator.vertical(factor: 2),
+            Headline(mobileBreakpoint: mobileBreakpoint),
+            const Separator.vertical(factor: 3),
+            CV(mobileBreakpoints: mobileBreakpoint),
+          ],
+        );
+      },
     );
   }
 }

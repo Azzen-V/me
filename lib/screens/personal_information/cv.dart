@@ -5,20 +5,44 @@ import '../../widgets/icon_three_lines.dart';
 import '../../widgets/no_header_table.dart';
 import '../../widgets/separator.dart';
 import '../../widgets/two_column_data_row.dart';
+import 'cv_image.dart';
 
 class CV extends StatelessWidget {
-  const CV({Key? key}) : super(key: key);
+  final double mobileBreakpoints;
+  const CV({Key? key, required this.mobileBreakpoints}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth <= 1500) {
+        print(constraints.maxWidth);
+        bool notDesktop = constraints.maxWidth <= 1500;
+        bool mobile = constraints.maxWidth <= mobileBreakpoints;
+        if (mobile) {
           return Column(
             children: [
-              _firstColumn(context),
+              _firstColumn(context, notDesktop),
+              const Separator.vertical(),
+              _secondColumn(context, mobile),
+            ],
+          );
+        }
+        if (notDesktop) {
+          return Column(
+            children: [
+              _firstColumn(context, notDesktop),
               const Separator.vertical(factor: 2),
-              _secondColumn(context),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(child: _contact()),
+                  const Separator.horizontal(),
+                  Expanded(
+                    flex: 2,
+                    child: _skills(context),
+                  ),
+                ],
+              ),
             ],
           );
         }
@@ -43,12 +67,12 @@ class CV extends StatelessWidget {
     );
   }
 
-  Widget _firstColumn(BuildContext context) => Column(
+  Widget _firstColumn(BuildContext context, [bool center = false]) => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const ColoredPill.filled(
+          ColoredPill.filled(
             "Berufliche Tätigkeit",
-            textAlign: TextAlign.end,
+            textAlign: center ? TextAlign.center : TextAlign.end,
           ),
           const Separator.vertical(),
           NoHeaderTable(
@@ -71,9 +95,9 @@ class CV extends StatelessWidget {
             ],
           ),
           const Separator.vertical(factor: 2),
-          const ColoredPill.filled(
+          ColoredPill.filled(
             "Schulische Bildung",
-            textAlign: TextAlign.end,
+            textAlign: center ? TextAlign.center : TextAlign.end,
           ),
           const Separator.vertical(),
           NoHeaderTable(
@@ -103,31 +127,45 @@ class CV extends StatelessWidget {
         ],
       );
 
-  Widget get _contact => const Column(
+  Widget _contact([bool mobile = false]) => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          ColoredPill.bordered(
+          const ColoredPill.bordered(
             "Kontaktdaten",
             textAlign: TextAlign.center,
           ),
-          Separator.vertical(factor: 2),
-          IconThreeLines(
-            icon: Icons.location_on,
-            title: "Adresse",
-            line1: "Brunnenstr. 39",
-            line2: "49809 Lingen",
-          ),
-          Separator.vertical(),
-          IconThreeLines(
-            icon: Icons.mail,
-            title: "E-Mail",
-            line1: "vgerdelmann@icloud.com",
-          ),
-          Separator.vertical(),
-          IconThreeLines(
-            icon: Icons.phone,
-            title: "Telefon",
-            line1: "01744083363",
+          const Separator.vertical(factor: 2),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  IconThreeLines(
+                    icon: Icons.location_on,
+                    title: "Adresse",
+                    line1: "Brunnenstr. 39",
+                    line2: "49809 Lingen",
+                  ),
+                  Separator.vertical(),
+                  IconThreeLines(
+                    icon: Icons.mail,
+                    title: "E-Mail",
+                    line1: "vgerdelmann@icloud.com",
+                  ),
+                  Separator.vertical(),
+                  IconThreeLines(
+                    icon: Icons.phone,
+                    title: "Telefon",
+                    line1: "01744083363",
+                  ),
+                ],
+              ),
+              if (mobile) ...[
+                const Separator.horizontal(factor: 2),
+                const CVImage(),
+              ],
+            ],
           ),
         ],
       );
@@ -162,10 +200,10 @@ class CV extends StatelessWidget {
         ],
       );
 
-  Widget _secondColumn(BuildContext context) => Column(
+  Widget _secondColumn(BuildContext context, [bool mobile = false]) => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _contact,
+          _contact(mobile),
           const Separator.vertical(factor: 3),
           _skills(context),
         ],

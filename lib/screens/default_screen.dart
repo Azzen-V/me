@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class DefaultScreen extends StatelessWidget {
   final Widget child;
   final String label;
+  final bool mobilePadding;
   const DefaultScreen({
     Key? key,
     required this.child,
     required this.label,
+    this.mobilePadding = false,
   }) : super(key: key);
 
   @override
@@ -14,7 +16,7 @@ class DefaultScreen extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         EdgeInsets padding;
-        if (constraints.maxWidth <= 700) {
+        if (constraints.maxWidth <= 700 || mobilePadding) {
           padding = const EdgeInsets.symmetric(vertical: 30, horizontal: 30);
         } else {
           padding = const EdgeInsets.symmetric(vertical: 100, horizontal: 100);
