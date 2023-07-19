@@ -38,6 +38,7 @@ class MyApp extends ConsumerWidget {
           ),
         ),
         useMaterial3: true,
+        dividerTheme: const DividerThemeData(color: Colors.transparent),
       ),
       routerConfig: ref.watch(RootRouter.router),
     );
