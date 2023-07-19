@@ -18,7 +18,7 @@ class NameAndTitle extends StatelessWidget {
                 bottomRight: Radius.circular(100),
               ),
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 25),
+      padding: mobile ? const EdgeInsets.symmetric(horizontal: 25, vertical: 15) : const EdgeInsets.symmetric(horizontal: 50, vertical: 25),
       child: Column(
         crossAxisAlignment: mobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
         children: [
