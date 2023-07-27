@@ -1,4 +1,6 @@
 class Constants {
+  static const String email = "vgerdelmann@icloud.com";
+  static const String phone = "01744083363";
   static List<String> characteristics = [
     "leidenschaftliche Softwareenwicklerin",
     "immer für ein Lächeln zu haben",

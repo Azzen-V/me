@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'dart:html' as html;
+import 'package:me/business_logic/utils.dart';
 
 import '../../widgets/separator.dart';
 
@@ -17,7 +17,7 @@ class Social extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         IconButton.filled(
-          onPressed: () => _launchUrl("https://www.instagram.com/azzen_v/"),
+          onPressed: () => Utils.launchUrl("https://www.instagram.com/azzen_v/"),
           icon: const Icon(FontAwesomeIcons.instagram),
         ),
         const Separator.horizontal(),
@@ -25,18 +25,16 @@ class Social extends StatelessWidget {
           onPressed: () {
             var whatsapp = "+491744083363";
             var whatsappURlAndroid = "whatsapp://send?phone=$whatsapp&text=Hallo Vanessa, ich habe Dich über Deine Website gefunden.";
-            _launchUrl(whatsappURlAndroid);
+            Utils.launchUrl(whatsappURlAndroid);
           },
           icon: const Icon(FontAwesomeIcons.whatsapp),
         ),
         const Separator.horizontal(),
         IconButton.filled(
-          onPressed: () => _launchUrl("https://github.com/Azzen-V?tab=repositories"),
+          onPressed: () => Utils.launchUrl("https://github.com/Azzen-V?tab=repositories"),
           icon: const Icon(FontAwesomeIcons.github),
         ),
       ],
     );
   }
-
-  void _launchUrl(String url) => html.window.open(url, 'new tab');
 }

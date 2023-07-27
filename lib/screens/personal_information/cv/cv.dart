@@ -19,7 +19,6 @@ class CV extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        print(constraints.maxWidth);
         bool notDesktop = constraints.maxWidth <= 1500;
         bool mobile = constraints.maxWidth <= mobileBreakpoints;
         if (mobile) {
