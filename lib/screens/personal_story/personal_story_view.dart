@@ -57,7 +57,7 @@ class PersonalStoryView extends StatelessWidget {
                                 "das Spiel 'Pong' in C++ entwickelte."),
                             const LargeText("Anschließend lernte ich die Web-Entwicklung lieben. Die Grundlagen "
                                 "erlernte ich in der Schule, doch diese reichten schon bald nicht mehr aus, "
-                                "um meine Wissbegierde zu befriedigen."),
+                                "um meine Wissbegierde zu stillen."),
                             const LargeText("Nach meinem Abitur fing ich dann eine Ausbildung zur "
                                 "Fachinformatikerin für Anwendungsentwicklung an. Dann kam COVID - und ich dachte mir: "
                                 "'Jetzt oder nie!' Vor der Pandemie war es mir aus logistischen Gründen nur schwer "
@@ -66,11 +66,11 @@ class PersonalStoryView extends StatelessWidget {
                                 "Traum zu erfüllen. Ein Studium im Home Office."),
                             const LargeText("Ich ergatterte einen Job bei Racler Productions, einem kleinen Start-Up "
                                 "aus Melle, die individuelle Softwareentwicklung nach kundenspezifischen Anforderungen "
-                                "umsetzen. Dort arbeite ich zunächst mit Angular, wurde dann allerdings schnell in der "
+                                "umsetzen. Dort arbeitete ich zunächst mit Angular, wurde dann allerdings schnell in der "
                                 "Flutter-Entwicklung gebraucht und lernte sie schnell zu lieben."),
                             const LargeText("Die Pandemie endete. Mit den Inhalten meines Studiums nicht so "
                                 "wirklich zufrieden, weil sie allesamt sehr theoretisch waren und betrachtend der "
-                                "Tatsache, dass das Leben sehr viel teurer geworden war in den letzten Jahren, "
+                                "Tatsache, dass die Lebenserhaltungskosten in den letzten Jahren sehr gestiegen sind, "
                                 "wechselte ich in ein Fernstudium, um nebenberuflich neben meiner mittlerweile "
                                 "35-Stunden-Woche zu studieren."),
                             const LargeText("Das Studium vermittelt mir nun endlich die theoretischen Hintergründe "
@@ -124,10 +124,6 @@ class PersonalStoryView extends StatelessWidget {
                             Separator.vertical(factor: 0.25),
                             LargeText("Generell erlerne ich schnell neue Technologien und lege großen Wert "
                                 "auf qualitativ hochwertigen Code."),
-                            Separator.vertical(factor: 0.25),
-                            LargeText("Mein Weg ist vielleicht nicht der Musterweg, den man sich so vorstellt, "
-                                "wenn man sein Leben plant. Aber es ist der Weg, der für mich funktioniert "
-                                "und er hat mich gelehrt, schnell und einfallsreich mit Problematiken umzugehen."),
                             Separator.vertical(factor: 5),
                             LargeText("Habe ich Sie überzeugt? Dann melden Sie sich gerne für ein persönliches "
                                 "Vorstellungsgespräch bei mir. Ich bin sicher, dass ich eine Bereicherung für "

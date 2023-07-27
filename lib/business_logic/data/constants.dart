@@ -52,7 +52,7 @@ class Constants {
   };
 
   static Map<String, String> skills = {
-    "IT-Kentnisse": "Flutter, Angular, C#, Java, TypeScript, GitHub, Firebase, Supabase, Web-Entwicklung, VBA, VBScript",
+    "IT-Kenntnisse": "Flutter, Angular, C#, Java, TypeScript, GitHub, Firebase, Supabase, Web-Entwicklung, VBA, VBScript",
     "Fremdsprachen": "Englisch, Französisch (DELF A2)",
     "Hobbies": "Programmieren, Lesen, Computerspiele, Motorsport, Fußball",
   };
